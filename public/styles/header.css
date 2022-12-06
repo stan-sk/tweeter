@@ -7,16 +7,13 @@ header.main {
   align-items: center;
   padding-top: 120px;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-  
 }
-
 
 header.tweet-header {
   display: flex;
   background-color: transparent;
   justify-content: space-between;
   padding-bottom: 1em;
-
 }
 
 .all-tweets {
@@ -32,3 +29,12 @@ header.tweet-header {
 .article {
   padding-bottom: 1em;
 }
+
+.icon {
+  color: rgb(46, 46, 197)
+}
+
+.icon:hover {
+  color: rgb(222, 196, 29)
+}
+
