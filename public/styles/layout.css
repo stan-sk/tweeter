@@ -18,8 +18,22 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
+
+.container {
+  width: 90%;
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ curl -X POST -d 'text=Hellooooo' -H "Content-Type: application/x-www-form-urlencoded" http://127.0.0.1:8080/tweets   
