@@ -1,0 +1,21 @@
+$(document).ready(function() {
+  
+  $('#tweet-text').keydown(function(){
+    const tweetLength = $(this).val().length;
+     
+    $('#tweet-text').keydown(function(){
+      const tweetLength = $(this).val().length
+      const counter = $(this).siblings().children()[1]
+      $(counter).text(140-tweetLength)
+        
+      if (tweetLength > 140) {
+        $(counter).css('color', 'red');
+      } else {
+        $(counter).css('color', '#545149');
+      }
+
+    });
+
+  });
+
+}); 

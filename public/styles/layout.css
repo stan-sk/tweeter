@@ -36,4 +36,3 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- curl -X POST -d 'text=Hellooooo' -H "Content-Type: application/x-www-form-urlencoded" http://127.0.0.1:8080/tweets   
