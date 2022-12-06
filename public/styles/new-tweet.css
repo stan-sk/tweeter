@@ -11,7 +11,12 @@
 
 .textArea {
   background-color: transparent;
-  font-family: "Bungee", cursive;
   font-size: 16px;
   border-width: 0 0 4px;
+  resize: none;
+  outline: none;
+}
+
+.label {
+  font-weight: bold;
 }
