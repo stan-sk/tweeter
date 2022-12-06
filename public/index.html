@@ -65,22 +65,11 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <!-- <div>
-        <input style="width: 100%" Content-Type: application/x-www-form-urlencoded type="text" placeholder="What are you humming about?">
-        <hr>
-      </div>
-      <div class="characterLeft">
-        <input class="submit" type="submit" value="TWEET">   
-        <span><strong>140</strong></span>
-      </div>
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-      </div> -->
-
       <section class="new-tweet">
         <form>
-          <label class="label" for="tweet-text">What are you humming about?</label>
-          <textarea class ="textArea" name="text" id="tweet-text" style="width: 100%"></textarea>
+          <!-- <label class="label" for="tweet-text">What are you humming about?</label> -->
+          <br>
+          <textarea class ="textArea" name="text" id="tweet-text" style="width: 100%" placeholder="What are you humming about?"></textarea>
           <div class="characterLeft">
             <button class="submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -89,24 +78,23 @@
       </section>
       <br>
       <br>
-      <section class="all-tweets">
+      <section class="all-tweets" id="tweets-container">
         <article>
           <header class="tweet-header">
-            <span><i class="fa-sharp fa-solid fa-user-astronaut"></i></span>
-            <span>Newton</span>
-            <span>@SirIssac</span>
+            <div class="tweeter"><img class ="avatar" src="https://i.imgur.com/nlhLi3I.png">
+            <h5 class="tweeterName">Newton</h5></div>
+            <div class="username"><h5>@SirIssac</h5></div>
           </header>
           <article class="article">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco
           </article>
           <hr>
           <footer class="footer">
-            <span>10 days ago</span>
+            <span><h5>10 days ago</h5></span>
             <div>
-            <i class="fa-solid fa-flag icon"></i>
-            <i class="fa-regular fa-arrows-retweet icon"></i>
-            <i class="fa-sharp fa-solid fa-retweet icon"></i>
-            <i class="fa-solid fa-heart icon"></i>
+            <i class="icon fa-solid fa-flag"></i>
+            <i class="icon fa-sharp fa-solid fa-retweet"></i>
+            <i class="icon fa-solid fa-heart"></i>
             </div>
           </footer>
         </article>

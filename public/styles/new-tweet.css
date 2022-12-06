@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", cursive;
+  margin-top: 8px;
 }
 
 .submit {
@@ -11,7 +12,7 @@
 
 .textArea {
   background-color: transparent;
-  font-size: 16px;
+  font-size: 24px;
   border-width: 0 0 4px;
   resize: none;
   outline: none;
@@ -21,4 +22,11 @@
   font-weight: bold;
 }
 
+img.avatar {
+  height: 40px;
+  width: 40px;
+}
 
+.counterRed {
+  color: red
+}
