@@ -102,6 +102,7 @@ $(document).ready(function() {
         loadTweets();
       }
     })
+    this.reset();
   })
 
 });
