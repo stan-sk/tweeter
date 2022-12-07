@@ -43,7 +43,6 @@
 
 const createTweetElement = function (object) {
   let $tweet = `
-      
         <article class="all-tweets">
           <header class="tweet-header">
             <div class="tweeter"><img class ="avatar" src=${object.user.avatars}>
@@ -55,7 +54,7 @@ const createTweetElement = function (object) {
           </article>
           <hr>
           <footer class="footer">
-            <span><h5>${object.created_at}</h5></span>
+            <span><h5>${timeago.format(object.created_at)}</h5></span>
             <div>
             <i class="icon fa-solid fa-flag"></i>
             <i class="icon fa-sharp fa-solid fa-retweet"></i>
@@ -63,7 +62,6 @@ const createTweetElement = function (object) {
             </div>
           </footer>
         </article>
-      
     `
   return $tweet
 }
@@ -79,11 +77,18 @@ const renderTweets = function(tweets) {
 }
 
 const loadTweets = function () {
-  $.ajax("/tweets", { method: "GET"})
-  .then (function (tweet) {
-    renderTweets(tweet)
-    return;
+  $.ajax({
+    type: "GET",
+    url: "/tweets",
+    success: function(tweet) {
+      renderTweets(tweet);
+    }
   })
+  // $.ajax("/tweets", { method: "GET"})
+  // .then (function (tweet) {
+  //   renderTweets(tweet)
+  //   return;
+  // })
 }
 
 $(document).ready(function() {
@@ -103,6 +108,7 @@ $(document).ready(function() {
       }
     })
     this.reset();
+    $(".counter").text(140);
   })
 
 });
