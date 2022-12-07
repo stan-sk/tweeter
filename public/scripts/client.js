@@ -4,30 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ]
 
 // const tweetData = {
 //     "user": {
@@ -69,33 +69,39 @@ const createTweetElement = function (object) {
 }
 
 const renderTweets = function(tweets) {
+  const tweetsAll = [];
   for (const tweet of tweets) {
     let $tweet = createTweetElement(tweet);
-
-    $(document).ready(function() {
-      $("#tweets-container").after($tweet);
-    });
+    tweetsAll.push($tweet)
   }
+  $("#tweets-container").html(tweetsAll.reverse());
   return;
 }
 
-renderTweets(data)
-
-
+const loadTweets = function () {
+  $.ajax("/tweets", { method: "GET"})
+  .then (function (tweet) {
+    renderTweets(tweet)
+    return;
+  })
+}
 
 $(document).ready(function() {
 
-  renderTweets(data);
+  loadTweets();
 
   $('.tweetform').submit(function(event) {
     event.preventDefault();
-    $(this).serialize();
+    
+    const tweet = $(this).serialize();
     $.ajax({
       type: "POST",
-      url: "/tweets",
-      data: $(this).serialize()
+      url: "/tweets",  
+      data: tweet,
+      success: function(data) {
+        loadTweets();
+      }
     })
-  });
+  })
 
 });
-
