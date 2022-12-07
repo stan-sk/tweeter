@@ -43,8 +43,8 @@ const data = [
 
 const createTweetElement = function (object) {
   let $tweet = `
-      <section class="all-tweets" id="tweets-container">
-        <article>
+      
+        <article class="all-tweets">
           <header class="tweet-header">
             <div class="tweeter"><img class ="avatar" src=${object.user.avatars}>
             <h5 class="tweeterName">${object.user.name}</h5></div>
@@ -63,7 +63,7 @@ const createTweetElement = function (object) {
             </div>
           </footer>
         </article>
-      </section>
+      
     `
   return $tweet
 }
@@ -79,5 +79,23 @@ const renderTweets = function(tweets) {
   return;
 }
 
-
 renderTweets(data)
+
+
+
+$(document).ready(function() {
+
+  renderTweets(data);
+
+  $('.tweetform').submit(function(event) {
+    event.preventDefault();
+    $(this).serialize();
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $(this).serialize()
+    })
+  });
+
+});
+
