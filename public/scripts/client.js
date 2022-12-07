@@ -41,6 +41,12 @@
 //     "created_at": 1670187449475
 // }
 
+const escapeFn = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function (object) {
   let $tweet = `
         <article class="all-tweets">
@@ -50,7 +56,7 @@ const createTweetElement = function (object) {
             <div class="username"><h5>${object.user.handle}</h5></div>
           </header>
           <article class="article">
-          ${object.content.text}
+          ${escapeFn(object.content.text)}
           </article>
           <hr>
           <footer class="footer">
@@ -62,8 +68,9 @@ const createTweetElement = function (object) {
             </div>
           </footer>
         </article>
+
     `
-  return $tweet
+  return $tweet;
 }
 
 const renderTweets = function(tweets) {
@@ -96,7 +103,12 @@ $(document).ready(function() {
   loadTweets();
 
   $('.tweetform').submit(function(event) {
-    event.preventDefault();
+    event.preventDefault(); 
+    
+    const $tweetlength = $('#tweet-text').val().length
+      if ($tweetlength === 0 || $tweetlength > 140){
+        return alert('This field can not be empty or have more than 140 characters')
+      }
     
     const tweet = $(this).serialize();
     $.ajax({
@@ -110,5 +122,4 @@ $(document).ready(function() {
     this.reset();
     $(".counter").text(140);
   })
-
 });
