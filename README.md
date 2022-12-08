@@ -20,3 +20,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+!["Mobile view"](https://github.com/stan-sk/tweeter/blob/master/docs/tweeter_mobile.png)
+
+!["Desktop view"](https://github.com/stan-sk/tweeter/blob/master/docs/tweeter_desktop.png)
+
+
+## Responsive Single Page Application
+
+- User can submit tweet via the tweet button
+- Clicking the "Write a new tweet" will bring user to the text area
+- latest tweet will show on the top
+-When the user hovers over a tweet, that tweet should display a box shadow.
+- character counter/ error message to remind user to keep text within 140 characters
+
+
