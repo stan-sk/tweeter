@@ -12,10 +12,15 @@
 
 .textArea {
   background-color: transparent;
-  font-size: 24px;
+  font-size: 20px;
   border-width: 0 0 4px;
   resize: none;
   outline: none;
+  height: 45px;
+}
+
+#tweet-text::placeholder {
+  font-weight: bold;
 }
 
 .label {
