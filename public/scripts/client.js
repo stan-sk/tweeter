@@ -107,7 +107,7 @@ $(document).ready(function() {
     
     const $tweetlength = $('#tweet-text').val().length
       if ($tweetlength === 0 || $tweetlength > 140){
-        return alert('This field can not be empty or have more than 140 characters')
+        return $(".errorMsg").css("visibility", "visible");
       }
     
     const tweet = $(this).serialize();
@@ -116,10 +116,11 @@ $(document).ready(function() {
       url: "/tweets",  
       data: tweet,
       success: function(data) {
+        $(".errorMsg").css("visibility", "hidden");
+        $(".counter").text(140);
         loadTweets();
       }
     })
     this.reset();
-    $(".counter").text(140);
   })
 });

@@ -45,6 +45,8 @@ h5.tweeterName {
 .footer {
   display: flex;
   justify-content: space-between;
+  height: 45px;
+  align-items: center;
 }
 
 .article {
@@ -59,3 +61,19 @@ h5.tweeterName {
   color: rgb(222, 196, 29)
 }
 
+
+@media only screen and (min-width: 768px) {
+
+  header.main {
+    width: 40%;
+    float: left;
+    margin-top: 226px;
+    margin-left: 40px
+  }
+
+  main.container {
+    width: 60%;
+    float: right;
+  }
+
+}

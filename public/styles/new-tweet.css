@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", cursive;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .submit {
@@ -27,6 +27,20 @@ img.avatar {
   width: 40px;
 }
 
+hr {
+height: 2px;
+width: auto;
+background-color: #545149;
+}
+
 .counterRed {
   color: red
+}
+
+.errorMsg {
+  display: flex;
+  font-size: 18px;
+  color: red;
+  margin-top: 10px;
+  visibility: hidden;
 }
